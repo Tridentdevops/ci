@@ -81,7 +81,8 @@ jobs:
 
             - name: update k8s manifest
               run: |
-                  sed -i 's|image: .*|image: '"${{ secrets.DOCKERHUB_USERNAME }}"'/product-catalog:'"${{ github.run_id }}"'|g' ./k8s/product-catalog-deployment.yaml
+                  sed -i 's|image: .*|image: '"${{ secrets.DOCKERHUB_USERNAME }}"'
+                  /product-catalog:'"${{ github.run_id }}"'|g' kubernetes/productcatalog/deploy.yaml
 
             - name: commit and push changes
               run: |
