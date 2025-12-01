@@ -64,9 +64,9 @@ jobs:
             - name: build and push image
               uses: docker/build-push-action@v4
               with:
-                  context: ./product-catlog
+                  context: ./product-catalog
                   push: true    
-                  tags: ${{ secrets.DOCKERHUB_USERNAME }}/product-catlog:${{ github.run_id }}
+                  tags: ${{ secrets.DOCKERHUB_USERNAME }}/product-catalog:${{ github.run_id }}
     
                   
     update-k8-maifest:
