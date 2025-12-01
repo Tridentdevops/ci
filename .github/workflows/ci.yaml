@@ -82,11 +82,13 @@ jobs:
             - name: update k8s manifest
               run: |
                   
-                  sed -i "s|image: .*|image: ${{ secrets.DOCKERHUB_USERNAME }}/product-catalog:${{ github.run_id }}|g" kubernetes/productcatalog/deploy.yaml
-                  
+                   sed -i "s|image: .*|image: ${{ secrets.DOCKERHUB_USERNAME }}/product-catalog:${{ github.run_id }}|g" kubernetes/productcatalog/deploy.yaml
+
+
             - name: commit and push changes
               run: |
                   git config --global user.name "github-actions"
                   git config --global user.email " 
-                  git commit -am "Update k8s manifest for product-catlog service"
-                  git push origin main
+                  git add kubernetes/productcatalog/deploy.yaml
+                  git commit -m "Update k8s manifest for product-catlog service"
+                  git push origin HEAD:master
