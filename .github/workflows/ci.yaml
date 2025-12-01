@@ -2,7 +2,7 @@ name: product-catlog-ci
 on: 
     pull_request:
         branches:
-            - main
+            - master
 
 jobs:
 
