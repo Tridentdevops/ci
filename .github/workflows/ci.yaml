@@ -91,4 +91,4 @@ jobs:
                   git config --global user.email "github-actions@github.com"
                   git add kubernetes/productcatalog/deploy.yaml
                   git commit -m "Update k8s manifest for product-catlog service"
-                  git push origin HEAD:master
+                  git push origin HEAD:master --force
