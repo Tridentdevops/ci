@@ -19,13 +19,13 @@ jobs:
                   go-version: 1.21
 
             - name: download dependencies
-              working-directory: product-catlog
+              working-directory: ./product-catlog
               run: go mod download 
 
             - name: build
-              working-directory: product-catlog
+            
               run: go build -o product-catlog-service ./product-catlog/main.go
-        
+              working-directory: ./product-catlog
             - name: run tests
               run: go test ./product-catlog/...
               
