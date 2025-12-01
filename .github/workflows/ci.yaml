@@ -24,8 +24,8 @@ jobs:
 
             - name: build
             
-              run: go build -o product-catlog-service ./product-catlog/main.go
-              working-directory: ./product-catlog
+              run: go build -o product-catalog-service ./product-catalog/main.go
+              working-directory: ./product-catalog
             - name: run tests
               run: go test ./product-catalog/...
               
