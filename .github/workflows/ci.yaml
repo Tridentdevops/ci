@@ -24,7 +24,7 @@ jobs:
 
             - name: build
               working-directory: ./product-catalog
-              run: go build -o product-catalog-service main.go
+              run: go build -o product-catalog-service 
 
           
               
@@ -43,6 +43,9 @@ jobs:
 
 
     docker:
+
+        needs: build
+       
         runs-on: ubuntu-latest
 
         steps:
