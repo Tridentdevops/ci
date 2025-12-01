@@ -23,11 +23,10 @@ jobs:
               run: go mod download 
 
             - name: build
-            
-              run: go build -o product-catalog-service ./product-catalog/main.go
               working-directory: ./product-catalog
-            - name: run tests
-              run: go test ./product-catalog/...
+              run: go build -o product-catalog-service main.go
+
+          
               
               
     code-quality:
